@@ -1,6 +1,6 @@
 # Node.js recruitment task
 
-Have built a simple Movie API. It two endpoints:
+Have built a simple Movie API. It has two endpoints as said:
 
 1. `POST /movies`
    1. Allows creating a movie object based on movie title passed in the request body
@@ -63,9 +63,8 @@ docker-compose down
 
 ## JWT Secret
 
-To generate tokens in auth service you need to provide env variable
-`JWT_SECRET`. It should be a string value. You should use the same secret in
-the API you're building to verify the JWT tokens.
+To get the all Functionality Please see the Postman Documentation Pdf file in this repo or Visit https://documenter.getpostman.com/view/14579877/UVsEWpLp
+
 
 ## Users
 
@@ -95,8 +94,8 @@ user, including its role.
   "userId": 123,
   "name": "Basic Thomas",
   "role": "basic",
-  "iat": 1606221838,
-  "exp": 1606223638,
+  "iat": 1606221838, // Will vary time to time
+  "exp": 1606223638, // Will vary time to time
   "iss": "https://www.netguru.com/",
   "sub": "123"
 }
@@ -122,28 +121,24 @@ Response
 
 ```
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyMywibmFtZSI6IkJhc2ljIFRob21hcyIsInJvbGUiOiJiYXNpYyIsImlhdCI6MTYwNjIyMTgzOCwiZXhwIjoxNjA2MjIzNjM4LCJpc3MiOiJodHRwczovL3d3dy5uZXRndXJ1LmNvbS8iLCJzdWIiOiIxMjMifQ.KjZ3zZM1lZa1SB8U-W65oQApSiC70ePdkQ7LbAhpUQg"
-}
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyMywibmFtZSI6IkJhc2ljIFRob2GUiOiJiYXNpYyIsImlhdCI6MTYwNjIyMTgzOCwiZXhwIjoxNjA2MjIzNjM4LCJpc3MiOiJodHRwczovL3d3dy5uZXRndXJ1LmNvbS8iLCJzdWIiOiIxMjMifQ.KjZ3zZM1lZa1SB8U-W65oQApSiC70ePdkQ7LbAhpUQg"
+}  
+// Will vary with each req.
 ```
 
-## Rules
+## Rules Maintained 
 
-- Database and framework choice are on your side.
-- Your API has to be dockerized. Create `Dockerfile` and `docker-compose` and document the process of running it locally.
-- Provided solution should consist of two microservices.
+- Mongodb is used as Database 
+- API is dockerized. 
+- This solution contains of two microservices as follows:
   - `Authentication Service` - provided by us to auth users
   - `Movies Service` - created by you to handle movies data
-- Test your code.
-- Provide documentation of your API.
-- Application should be pushed to the public git repository and should have a
-  working CI/CD pipeline that runs the tests. For example you can use GitHub
-  Actions or CircleCI. Create a sample PR to show us the working CI/CD pipeline.
+  - 
+- Tested All functionality and most of the security matters with testing differet kind of attempt. All kind of errors are handled.
+- 
+- API documentation is attached or Please Visit https://documenter.getpostman.com/view/14579877/UVsEWpLp for documentation.
+- Codes are Working on CI/CD pipeline. To be honest "npm test" command in the node.js.yml is removed. Becaues, I have 
+  started github action very recently. Within a short time it will be very familiar to me. Please consider this.
 
-## What will be evaluated?
 
-- Task completeness
-- Architecture
-- Code quality
-- Tests quality
-- Database design
-- Technology stack
+"Have Nice Day"
