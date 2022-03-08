@@ -4,7 +4,8 @@ const Movie = require("../model/Movie");
 
 // limit will check if basic uesr can not exceeds 5 movies
 exports.limitation = asyncHandler(async (req, res, next) => {
-  // calculation for One moth limit for basic user
+  
+  // calculation for One month limit for basic user
   const role = await userRole();
   const allMovie = await Movie.find({ UserRole: role });
   let monthLimit;
@@ -20,8 +21,7 @@ exports.limitation = asyncHandler(async (req, res, next) => {
       const addMonth = getDateFm + 30;
       let duration = dateOfFisrtMove.setDate(addMonth);
       monthLimit = new Date(duration);
-    } else {
-    }
+    } 
 
     // checking if basic ueser conditions meet can count 5 movie
     if (role === "basic" && monthLimit > monthStart) {
