@@ -41,11 +41,8 @@ exports.movie = asyncHandler(async (req, res) => {
     const match = movie.Title;
     const movieCreator = movie.UserRole
     const findUser = await Movie.find({ UserRole: role });
-    console.log("findUser", findUser)
     const moviedExist = findUser.find(u => u.Title === match)
-    console.log("moviedExist", moviedExist)
-    // const find = await Movie.find({ Title: match });
-    
+       
     //incase schema unique key creates error
 
     if (!moviedExist) {
