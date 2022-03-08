@@ -1,0 +1,1 @@
+const a = require('./src/server')

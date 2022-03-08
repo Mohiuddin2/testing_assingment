@@ -1,0 +1,22 @@
+version: "3.2"
+services:
+  app:
+    command: node src/server.js
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - published: ${APP_PORT:-3000}
+        target: 3000
+    volumes:
+      - .:/app/
+    environment:
+      JWT_SECRET: 639f5d94d86ec88c89103696fcfd25a4dbdeadd8043e90bea25b9bf3806f3884ce5d3fbe8f7ffec1157e6839056173a463314d73bd748dfad607df49ca8c8c53
+ 
+      URL: mongodb+srv://netguru:lZDRwifPp1XExtpp@cluster0.fbd4k.mongodb.net/NetGuru?retryWrites=true&w=majority 
+      APIkey: 4c566696
+
+
+      #  JWT_SECRET: ${JWT_SECRET}
+      # URL: ${URL}
+      # APIkey: ${APIkey}

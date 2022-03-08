@@ -1,0 +1,34 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Authentication protecting route",
+  "main": "./src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mohiuddin2/node-app.git"
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "express",
+    "docker"
+  ],
+  "author": "Netguru and Mohammed Mohiuddin",
+  "license": "ISC",
+  "dependencies": {
+    "@wdio/cli": "^7.16.16",
+    "axios": "^0.26.0",
+    "express": "4.17.1",
+    "express-mongo-sanitize": "^2.2.0",
+    "helmet": "^5.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.4"
+  },
+  "bugs": {
+    "url": "https://github.com/Mohiuddin2/node-app/issues"
+  },
+  "homepage": "https://github.com/Mohiuddin2/node-app#readme"
+}
