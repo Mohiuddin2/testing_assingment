@@ -1,12 +1,12 @@
 # Node.js recruitment task
 
-We'd like you to build a simple Movie API. It should provide two endpoints:
+Have built a simple Movie API. It two endpoints:
 
 1. `POST /movies`
    1. Allows creating a movie object based on movie title passed in the request body
-   2. Based on the title additional movie details should be fetched from
-      https://omdbapi.com/ and saved to the database. Data we would like you to
-      fetch from OMDb API:
+   2. Based on the title additional movie details is fetched from
+      https://omdbapi.com/ and saved to the mongodb. Data is fetched from OMDb API as 
+      bellow:
    ```
      Title: string
      Released: date
@@ -16,11 +16,12 @@ We'd like you to build a simple Movie API. It should provide two endpoints:
    3. Only authorized users can create a movie.
    4. `Basic` users are restricted to create 5 movies per month (calendar
       month). `Premium` users have no limits.
+   5. Indivisual user can't save same movie twice. But both uesr can save same movie once. 
 1. `GET /movies`
-   1. Should fetch a list of all movies created by an authorized user.
+   1. Only authorized user can fetch respective users movie info(Basic Uesr 5 Move).
 
-⚠️ Don't forget to verify user's authorization token before processing the
-request. The token should be passed in request's `Authorization` header.
+User authentication is verifed with user's authorization token before processing the
+request. The token is passed in request's `Authorization` header as Bearer Token.
 
 ```
 Authorization: Bearer <token>
@@ -28,27 +29,30 @@ Authorization: Bearer <token>
 
 # Authorization service
 
-To authorize users please use our simple auth service based on JWT tokens.
-Auth service code is located under `./src` directory
+To authorize users the auth service( JWT tokens) are used which was provieded by the Netguru Authority.
 
-## Prerequisites
 
-You need to have `docker` and `docker-compose` installed on your computer to run the service
+## Prerequisites if Followd as bellow:
+
+ `docker` and `docker-compose` installed on my computer to run the service.
 
 ## Run locally
 
 1. Clone this repository
-1. Run from root dir
+2. Run from root dir
+3. Jwt secret is added docker-compose.yml file in the root directory.
 
 ```
-JWT_SECRET=secret docker-compose up -d
+Buld docker image with this cli: docker-compose up --buld
 ```
 
 By default the auth service will start on port `3000` but you can override
 the default value by setting the `APP_PORT` env var
 
+The docker iamge can be run with following cli the shell
 ```
-APP_PORT=8081 JWT_SECRET=secret docker-compose up -d
+Running Background: docker-compose up -d 
+Running in shell: docker-compose up 
 ```
 
 To stop the authorization service run
