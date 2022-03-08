@@ -68,6 +68,12 @@ exports.movie = asyncHandler(async (req, res) => {
 // @access Private
 exports.getMovie = asyncHandler(async (req, res) => {
   const role = await userRole();
-  const allMovies = await Movie.find({ UserRole: role });
-  res.status(200).send(allMovies);
+  let allMovies = await Movie.find({ UserRole: role });
+  
+  // Checking movie data is in db or not
+  if (allMovies.length === 0) {
+    res.status(200).send("Please save a Movie data");
+  } else {
+    res.status(200).send(allMovies);
+  }
 });
