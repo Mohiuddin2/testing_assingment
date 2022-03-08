@@ -37,7 +37,7 @@ exports.movie = asyncHandler(async (req, res) => {
 
   try {
     //incase schema unique key creates error
-    console.log("MOvie", movie)
+   
     const match = movie.Title;
     const movieCreator = movie.UserRole
     const findUser = await Movie.find({ UserRole: role });
