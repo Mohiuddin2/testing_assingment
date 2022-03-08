@@ -40,7 +40,7 @@ To authorize users the auth service( JWT tokens) are used which was provieded by
 
 1. Clone this repository
 2. Run from root dir
-3. Jwt secret is added docker-compose.yml file in the root directory.
+3. Jwt secret is added docker-compose.yml file in the root directory Not in Github Secret for testing convenient issue.
 
 ```
 Buld docker image with this cli: docker-compose up --buld
