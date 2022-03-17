@@ -1,4 +1,4 @@
-# Node.js recruitment task
+# Node.js Authentication Task
 
 Have built a simple Movie API. It has two endpoints as said:
 
